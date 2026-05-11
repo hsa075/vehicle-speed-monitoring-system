@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "author": "IoT Speed Monitor",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": 100,
+      "left": 150,
+      "attrs": { "env": "micropython-20241129-v1.24.1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 20,
+      "left": 40,
+      "attrs": { "color": "red", "key": "q", "label": "PB1 Start" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 20,
+      "left": 300,
+      "attrs": { "color": "green", "key": "e", "label": "PB2 Stop" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP17",  "btn1:1.r", "red",   [] ],
+    [ "btn1:2.r",   "pico:GND.1", "black", [] ],
+    [ "pico:GP22",  "btn2:1.r", "green", [] ],
+    [ "btn2:2.r",   "pico:GND.2", "black", [] ]
+  ]
+}
